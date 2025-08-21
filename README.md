@@ -1,4 +1,11 @@
 **Dosyalar:** [video_edit.bat](video_edit.bat) • [final_vid_edit.py](final_vid_edit.py) • [requirements.txt](requirements.txt)
+## İndir
+
+- **Son sürüm (önerilen)**:  
+  [video-edit-automator.zip](https://github.com/msamkara67/video-edit-automator/releases/latest/download/video-edit-automator.zip)
+
+- **Tüm sürümler**:  
+  [Releases](https://github.com/msamkara67/video-edit-automator/releases)
 
 
 Kurulum (bir defa yeterli):
