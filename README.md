@@ -3,8 +3,6 @@
 ## 🎬 Demo
 [▶ Videoyu izle](https://github.com/msamkara67/video-edit-automator/releases/download/v0.1/MyResult.mp4)
 
-
-
 ## İndir
 
 [![Release](https://img.shields.io/github/v/release/msamkara67/video-edit-automator?label=latest)](https://github.com/msamkara67/video-edit-automator/releases/latest)
