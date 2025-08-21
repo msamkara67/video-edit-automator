@@ -3,7 +3,6 @@
 ## 🎬 Demo
 [![Videoyu izle](assets/MyResult_thumb.png)](assets/MyResult.mp4?raw=1)
 
-[![Videoyu izle](assets/MyResult_thumb.png)](assets/MyResult.mp4)
 
 ## İndir
 
