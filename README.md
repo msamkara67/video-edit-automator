@@ -55,7 +55,16 @@ Python + MoviePy tabanlı küçük bir araç. Windows `.bat` dosyasıyla:
 
 > Süreler **saniye** cinsindedir (tam sayı veya ondalık olabilir).
 
+## İpuçları ve Sorun Giderme
 
+- **“BGM bulunamadı” uyarısı:** `BGM_FILE` adı/konumu yanlış olabilir.
+- **“The handle is invalid”**: MoviePy işi bitirince görülebilen zararsız bir mesajdır. Çıkış dosyanız yazılmışsa sorun yoktur.
+- **Ses yok**: `MUTE_ORIGINAL=true` iken BGM de yoksa sessiz çıkar; `MUTE_ORIGINAL=false` yap ya da bir `bgm.wav` ekle.
+- **FFmpeg / indirme engeli**: `pip install -U imageio-ffmpeg` deneyin; kurumsal ağ indirimi engelleyebilir.
+- **Yazı boyutu/konum**: Kodda font otomatik büyük ayarlanır; yine de istersen `FONT_SIZE_FR`, `POS_MODE` gibi sabitleri değiştirebilirsin.
+
+## Lisans
+MIT
 
 
 
