@@ -1,5 +1,5 @@
 **Dosyalar:** [video_edit.bat](video_edit.bat) • [final_vid_edit.py](final_vid_edit.py) • [requirements.txt](requirements.txt)
-## Demo
+
 ## 🎬 Demo
 [▶ Videoyu izle](https://github.com/msamkara67/video-edit-automator/releases/download/v0.1/MyResult.mp4)
 
