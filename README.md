@@ -16,6 +16,7 @@ pip install -r requirements.txt
 3. `video_edit.bat` dosyasını **Not Defteri** ile aç; üstteki değişkenleri düzenle.
 4. `.bat` dosyasını **çift tıkla** çalıştır.
 5. Çıkış dosyası (`OUTPUT_VIDEO`) klasöre yazılır.
+video_edit.bat
 
 ## .BAT Değişkenleri
 
