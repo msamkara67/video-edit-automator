@@ -47,16 +47,13 @@ pip install -r requirements.txt
 FFmpeg ile ilgili sorun yaşarsan:
 ```bash
 pip install -U imageio-ffmpeg
+```
 
+### Ne yapman gerekiyor?
+- README’deki başlıkların hizası bu yeni düzenle uyumlu kalsın.
+- Kod bloklarının **üstünde** ve **sonunda** birer boş satır olsun.
+- **Preview** ile kontrol et: tablo ve listeler düzgün hizalanıyor mu?
 
----
-
-#### Ne yapman gerekiyor?
-
-1. README’deki ilgili bölümleri yukarıdaki bloklarla değiştir.
-2. Her code block’un **önünde ve arkasında birer boş satır** olduğundan emin ol.
-3. GitHub’da **Preview** sekmesiyle kontrol et.
-4. Commit mesajı: **`README – biçimlendirme düzeltildi`**
 
 İstersen bir sonraki adımda “çıktı örneği” (küçük GIF veya ekran görüntüsü) ekleyip README’nin sonuna **Demo** bölümü de koyarız.
 ::contentReference[oaicite:0]{index=0}
