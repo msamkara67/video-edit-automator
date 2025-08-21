@@ -1,3 +1,6 @@
+**Dosyalar:** [video_edit.bat](video_edit.bat) • [final_vid_edit.py](final_vid_edit.py) • [requirements.txt](requirements.txt)
+
+
 Kurulum (bir defa yeterli):
 
 ```bash
