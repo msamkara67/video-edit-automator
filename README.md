@@ -1,107 +1,79 @@
-video-edit-automator
+# video-edit-automator
 
-Python + MoviePy ile zamana bağlı altyazılar ve arkaplan müziği ekleyen, Windows’ta .bat dosyasıyla ayarlanıp çalıştırılan küçük bir araç.
+Python + MoviePy ile videolara zamanlı altyazı (captions) ve arka plan müziği ekleyen, Windows `.bat` dosyasıyla yönetilen küçük araç.
 
-🔧 0) Gereksinimler (tek seferlik)
+## ✨ Özellikler
+- Zaman aralığına göre ekrana yerleşen büyük yazılar (center/top/bottom)
+- Arka plan müziği: başlangıç/bitiş penceresi, fade-in/out
+- Hızlandırma (speed factor)
+- Tek noktadan yönetim: `video_edit.bat`
 
-Windows + Python 3.9+ (kurulu olmalı)
+---
 
-Komut satırında pip çalışıyor olmalı
+## ⚙️ Gereksinimler
+- Windows + Python 3.9+ (pip çalışır halde)
+- FFmpeg (MoviePy otomatik indirebilir; kurumsal ağlarda engel olabilir)
+- Paketler:
+  ```bash
+  pip install -r requirements.txt
 
-(İlk kurulum) Aşağıdaki komutla bağımlılıkları yükle:
+🚀 Hızlı Başlangıç
 
-pip install -r requirements.txt
+Bu projeyi indir ya da Git ile klonla.
 
+Düzenlemek istediğin videoyu proje klasörüne kopyala (ör. MySource.mp4).
 
-MoviePy, gerekirse ffmpeg bileşenini otomatik indirir. Kurumsal ağda engel varsa ffmpeg.exe’yi PATH’e ekleyebilirsin.
-
-⚡ 1) Hızlı Başlangıç (her video için)
-
-Bu projeyi indirip çıkar ya da Git ile klonla.
-
-Düzenlemek istediğin videoyu proje klasörüne kopyala (örn. MySource.mp4).
-
-Kullanmak istiyorsan bir müzik dosyası koy (bgm.wav gibi).
-
-video_edit.bat dosyasını Not Defteri ile aç ve üstteki değişkenleri ayarla:
+video_edit.bat dosyasını Not Defteri ile aç ve aşağıdaki değişkenleri ayarla:
 
 set "ROOT_DIR=C:\...\video_editing"   :: proje klasörü
 set "INPUT_VIDEO=MySource.mp4"        :: kaynak video
-set "OUTPUT_VIDEO=MyResult.mp4"       :: çıkış video
-set "BGM_FILE=bgm.wav"                :: müzik (opsiyonel)
-set "SPEED_FACTOR=4"                  :: 1=normal, 4=4x hız
-set "MUTE_ORIGINAL=true"              :: orijinal sesi kapat
-set "BGM_START=0"                     :: müzik başlangıcı (sn)
-set "BGM_END=0"                       :: 0 = videonun sonuna kadar
+set "OUTPUT_VIDEO=MyResult.mp4"       :: çıktı video
+set "BGM_FILE=bgm.wav"                :: arka plan müziği (isteğe bağlı)
+set "SPEED_FACTOR=4"                  :: 1 = normal hız
+set "MUTE_ORIGINAL=true"              :: videodaki orijinal sesi kapat
+
+set "BGM_START=0.0"                   :: müzik başlangıcı (saniye)
+set "BGM_END=0.0"                     :: 0 = videonun sonuna kadar
+
+:: Başlıkların başlangıç/bitiş zamanı (saniye) ve yazısı: start|end|text
+set "CAPTIONS=0|10|User enters the date.;15|88|Fetch daily coin metrics from the Binance API → template workbook.;88|110|Transfer data → main workbook.;111|128|Convert to presentation workbook + add VBA to update charts.;129|135|Open the presentation workbook.;136|166|Dynamic indicator charts per coin (powered by Binance API).;167|176|Virtual investing simulation page.;177|187|Per-coin indicator table for filtering signals."
 
 
-Aynı .bat dosyasının CAPTIONS bloğunda altyazılarını gir:
+video_edit.bat’e çift tıkla (veya cmd içinde çalıştır).
 
-> "%ROOT_DIR%\_captions.tmp" (
-  echo 0^|10^|User enters the date.
-  echo 15^|88^|Fetch daily coin metrics from the Binance API -^> template workbook.
-  echo 88^|110^|Transfer data -^> main workbook.
-  echo 111^|128^|Convert to presentation workbook + add VBA to update charts.
-  echo 129^|135^|Open the presentation workbook.
-  echo 136^|166^|Dynamic indicator charts per coin (powered by Binance API).
-  echo 167^|176^|Virtual investing simulation page.
-  echo 177^|187^|Per-coin indicator table for filtering signals.
-)
+Not: Zamanlar orijinal videoya göredir; hızlandırma (örn. x4) uygulansa da içeride doğru ölçeklenir.
 
+🧩 Parametre Özeti
+Değişken	Açıklama
+ROOT_DIR	Proje klasörü (tam yol)
+INPUT_VIDEO	Kaynak video dosyası
+OUTPUT_VIDEO	Çıkış video
+BGM_FILE	Arka plan müziği (boş bırakılabilir)
+SPEED_FACTOR	1, 2, 4…
+MUTE_ORIGINAL	true/false – orijinal sesi kapat
+BGM_START	Müziğin videoda başlayacağı zaman (sn)
+BGM_END	Müziğin biteceği zaman (sn). 0 = videonun sonu
+CAPTIONS	`start
+🛠 Sorun Giderme
 
-Sütun formatı: BAŞLANGIÇ|BİTİŞ|YAZI (saniye cinsinden)
+BGM bulunamadı: BGM_FILE yolunu ve dosya adını kontrol et.
 
-Batch dosyasında | ve > karakterleri özel olduğu için ^ ile kaçırıyoruz: ^| ve ^>
+Unicode/Türkçe karakter sorunu: Komut penceresi başına chcp 65001 kullanabilirsin.
 
-Ok işareti → istiyorsan doğrudan yapıştırabilirsin; sorun çıkarsa -^> kullan.
+“The handle is invalid”: Komut penceresini yönetici olmadan normal açıp çalıştırmayı dene.
 
-.bat dosyasını çift tıkla çalıştır.
-Çıktı dosyası: OUTPUT_VIDEO (örn. MyResult.mp4)
+FFmpeg bulunamıyor: imageio-ffmpeg indirilmesini engelleyen kurumsal proxy olabilir; FFmpeg’i PATH’e ekle.
 
-🧩 Altyazılar – ayrıntı
-
-Zamanlar saniye cinsinden ondalıklı olabilir: 12.5^|18.2^|Text
-
-Aynı anda birden fazla satır ekleyebilirsin; üst üste binerse sırayla gösterilir.
-
-Yazı tipi boyutu video yüksekliğine göre otomatik ayarlanır (stroke/contour ile okunaklı).
-
-🎵 Müzik penceresi
-
-BGM_START ve BGM_END ile müziğin video içinde hangi aralıkta çalacağını belirleyebilirsin.
-
-BGM_END=0 ⇒ videonun sonuna kadar
-
-MUTE_ORIGINAL=true ⇒ orijinal video sesi kapatılır.
-
-Ses seviyesi varsayılan ayarda; şiddet / fade sürelerini istersen koda parametre olarak ekleyebiliriz.
-
-🐞 Sorun Giderme
-
-BGM bulunamadı: BGM_FILE ismi/uzantısı doğru mu, aynı klasörde mi?
-
-Türkçe karakterler bozuk: .bat içinde zaten chcp 65001 var; dosyayı UTF-8 olarak kaydettiğinden emin ol.
-
-WinError 6 The handle is invalid: MoviePy/ffmpeg kapatma sırasında bazen görülür; çıktı video oluştuysa önemsemeyebilirsin.
-
-Çok uzun metinler: Otomatik kaydırılır; yine de MAX_WIDTH_FR parametresiyle genişliği artırabiliriz.
-
-📁 Dosya Yapısı
-video-edit-automator/
-├─ final_vid_edit.py      # asıl iş yapan Python betiği
-├─ video_edit.bat         # hepsini düzenleyip çalıştırdığın Windows betiği
-├─ requirements.txt       # tek seferlik bağımlılıklar
-├─ LICENSE
-└─ README.md
-
-📜 Lisans
+📝 Lisans
 
 MIT
 
-✅ Yol Haritası (isteğe bağlı)
 
-Ses seviyesi / fade sürelerini .bat’tan ayarlanabilir yapmak
+### Küçük ek öneriler
+- README’ye bir **ekran görüntüsü / GIF** ekle (çıktı örneği).
+- Üst başa kısa **İngilizce özet** ekleyebilirsin (uluslararası görünürlük).
+- Repo açıklamasına link: `pip install -r requirements.txt` ve `.bat` ile tek komutla çalışma vurgusu.
 
-Yazı konumu (top/center/bottom) ve yazı kutusu stilleri
+İstersen bu şablonu doğrudan README’ne yapıştırıp sadece kendi değerlerinle güncelle. Bu şekilde hem “preview” hem de “code” görünümünde okunması çok kolay olur.
+::contentReference[oaicite:0]{index=0}
 
-FFmpeg bulunamazsa otomatik uyarı
