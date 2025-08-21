@@ -61,5 +61,6 @@ pip install -U imageio-ffmpeg
 İstersen bir sonraki adımda “çıktı örneği” (küçük GIF veya ekran görüntüsü) ekleyip README’nin sonuna **Demo** bölümü de koyarız.
 ::contentReference[oaicite:0]{index=0}
 
+**Lisans:** MIT — ayrıntılar için [LICENSE](LICENSE).
 
 
