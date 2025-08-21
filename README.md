@@ -2,7 +2,7 @@ Kurulum (bir defa yeterli):
 
 ```bash
 pip install -r requirements.txt
-
+```
 ---
 
 ### 2) Hızlı Başlangıç (numaralı liste)
