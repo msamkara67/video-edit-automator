@@ -1,4 +1,8 @@
 **Dosyalar:** [video_edit.bat](video_edit.bat) • [final_vid_edit.py](final_vid_edit.py) • [requirements.txt](requirements.txt)
+## Demo
+
+[![Videoyu izle](assets/MyResult_thumb.png)](assets/MyResult.mp4)
+
 ## İndir
 
 [![Release](https://img.shields.io/github/v/release/msamkara67/video-edit-automator?label=latest)](https://github.com/msamkara67/video-edit-automator/releases/latest)
