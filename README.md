@@ -33,6 +33,19 @@ pip install -r requirements.txt
 
 
 
+## Altyazı (Captions) Formatı
 
+`.bat` dosyasında CAPTIONS bloğuna her satır şu şekilde yazılır:
+
+0|10|User enters the date.
+15|88|Fetch daily coin metrics from the Binance API → template workbook.
+88|110|Transfer data → main workbook.
+111|128|Convert to presentation workbook + add VBA to update charts.
+129|135|Open the presentation workbook.
+136|166|Dynamic indicator charts per coin (powered by Binance API).
+167|176|Virtual investing simulation page.
+177|187|Per-coin indicator table for filtering signals.
+
+> Süreler **saniye** cinsindedir (tam sayı veya ondalık olabilir).
 
 
