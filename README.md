@@ -1,6 +1,13 @@
 **Dosyalar:** [video_edit.bat](video_edit.bat) • [final_vid_edit.py](final_vid_edit.py) • [requirements.txt](requirements.txt)
 ## İndir
 
+[![Release](https://img.shields.io/github/v/release/msamkara67/video-edit-automator?label=latest)](https://github.com/msamkara67/video-edit-automator/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/msamkara67/video-edit-automator/total.svg)](https://github.com/msamkara67/video-edit-automator/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?logo=github)](https://github.com/msamkara67/video-edit-automator/releases/latest/download/video-edit-automator.zip)
+
+
 - **Son sürüm (önerilen)**:  
   [video-edit-automator.zip](https://github.com/msamkara67/video-edit-automator/releases/latest/download/video-edit-automator.zip)
 
